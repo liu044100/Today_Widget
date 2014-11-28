@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ViewController.h"
 
 @interface AppDelegate ()
 
@@ -17,6 +18,24 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    return YES;
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    ViewController *rootVC = (ViewController*)self.window.rootViewController;
+    
+    
+    if ( [[url host] isEqualToString:@"today"] && [[url path] isEqualToString:@"/view"]) {
+        NSString *number = [url query];
+        
+        NSIndexPath *indexPath = [NSIndexPath indexPathForItem:[number integerValue] inSection:0];
+        
+        [rootVC.tableView scrollToRowAtIndexPath:indexPath atScrollPosition:UITableViewScrollPositionTop animated:YES];
+        
+        [rootVC tableView:rootVC.tableView didSelectRowAtIndexPath: indexPath];
+    }
+    
     return YES;
 }
 
