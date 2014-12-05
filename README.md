@@ -7,4 +7,4 @@ Demo for iOS8 Today Extension;
 
 2) Recently Viewed Data will show in the today extension
 
-![alt tag](https://raw.github.com/liu044100/Today_Widget/branch/path/to/demo.gif)
+
