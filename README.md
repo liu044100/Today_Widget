@@ -8,3 +8,4 @@ Demo for iOS8 Today Extension;
 2) Recently Viewed Data will show in the today extension;
 
 
+![](https://raw.githubusercontent.com/liu044100/Today_Widget/master/demo.gif)
